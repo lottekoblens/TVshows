@@ -1,20 +1,22 @@
 import './App.css';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { React, useEffect, useState } from 'react'
-import ComedyShows from './modules/data/getComedyShows';
+
+import Homepage from './pages/Homepage';
+import SingleShow from './pages/SingleShow';
 
 const App = () => {
-  const [Data, SetData] = useState([])
+  // const [Data, SetData] = useState([])
 
-  useEffect(() => {
-    GetAllShowData()
-  }, [])
+  // useEffect(() => {
+  //   GetAllShowData()
+  // }, [])
 
-  const GetAllShowData = async () => {
-    let shows = await fetch(`https://api.tvmaze.com/shows`)
-    let showsJson = await shows.json();
-    SetData(showsJson);
-  };
+  // const GetAllShowData = async () => {
+  //   let shows = await fetch(`https://api.tvmaze.com/shows`)
+  //   let showsJson = await shows.json();
+  //   SetData(showsJson);
+  // };
 
   // const HighestRating = async () => {
   //   let array = []
@@ -33,10 +35,20 @@ const App = () => {
   // console.log(highest_rating)
 
 
-  return (<div>
-    <h1>React app</h1>
-    <ComedyShows data={Data} />
-  </div>
+  return (
+    <Router>
+      <div id="mainDiv" style={{ backgroundImage: "url('/image.png')" }}>
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/shows/:id" element={<SingleShow />} />
+
+        </Routes>
+        {/* <div id="content">
+          <h1>TV shows</h1>
+          <ComedyShows data={Data} />
+        </div> */}
+      </div>
+    </Router>
   )
 }
 
