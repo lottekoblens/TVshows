@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import ComedyShows from '../modules/data/getComedyShows'
+import DramaShows from '../modules/data/getDramaShows';
 
 const Homepage = () => {
     const [Data, SetData] = useState([])
@@ -18,6 +19,7 @@ const Homepage = () => {
         <h1>TV Shows</h1>
         <div id="content">
             <ComedyShows data={Data} />
+            <DramaShows data={Data} />
         </div>
     </div>
 }

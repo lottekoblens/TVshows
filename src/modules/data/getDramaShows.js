@@ -1,28 +1,28 @@
-const ComedyShows = (props) => {
+const DramaShows = (props) => {
     let data = props.data
 
-    let comedies = data.filter((element) => {
-        return element.genres.includes('Comedy')
-    });
+    let dramas = data.filter((element) => {
+        return element.genres.includes('Drama')
+    })
 
     const sortDataDramas = () => {
         let SortedData
-        SortedData = comedies.sort((a, b) => {
+        SortedData = dramas.sort((a, b) => {
             return b.rating.average - a.rating.average;
         })
         return SortedData;
     }
-    let sortedComedies = sortDataDramas()
-    let topComedies = sortedComedies.slice(0, 25);
+    let sortedDramas = sortDataDramas()
+    let topDramas = sortedDramas.slice(0, 25);
 
     return (<div>
-        <h2>The best comedy shows</h2>
+        <h2>The best drama shows</h2>
         <ul className="wrapper">
-            {topComedies.map((item) => (
+            {topDramas.map((item) => (
                 <a className="list-item" key={item.id} href={"/shows/" + item.id}> <li key={item.id}><img src={item.image.medium}></img><h3>{item.name}</h3></li></a>
             ))}
         </ul>
     </div >)
 }
 
-export default ComedyShows;
+export default DramaShows;

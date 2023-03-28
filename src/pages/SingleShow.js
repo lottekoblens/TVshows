@@ -5,7 +5,6 @@ const SingleShow = () => {
     console.log(id)
 
     const [DataSingle, SetDataSingle] = useState([])
-    // console.log(DataSingle)
 
     useEffect(() => {
         GetShowData()
