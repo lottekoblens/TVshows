@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom"
 import { React, useEffect, useState } from 'react';
 const SingleShow = () => {
     const { id } = useParams()
-    console.log(id)
 
     const [DataSingle, SetDataSingle] = useState([])
 
@@ -16,12 +15,11 @@ const SingleShow = () => {
         SetDataSingle(showJson);
     };
 
-    console.log(DataSingle.image)
-
     return <div className="singleshow">
         <h2>{DataSingle.name}</h2>
         <h3>{DataSingle.premiered}</h3>
-        <img src={DataSingle.length > 0 ? DataSingle.image.medium : '/image.png'}></img>
+        <img src={DataSingle.image !== undefined ? DataSingle.image.medium : '/image.png'}
+            alt={"Cover image for " + DataSingle.name} ></img>
     </div>
 }
 
