@@ -3,23 +3,25 @@ import { React, useEffect, useState } from 'react';
 const SingleShow = () => {
     const { id } = useParams()
 
-    const [DataSingle, SetDataSingle] = useState([])
+    const [SingleShowData, SetSingleShowData] = useState([])
 
     useEffect(() => {
-        GetShowData()
-    }, [SetDataSingle])
+        const GetShowData = async () => {
+            let show = await fetch(`https://api.tvmaze.com/shows/` + id)
+            let showJson = await show.json();
+            SetSingleShowData(showJson);
+        };
 
-    const GetShowData = async () => {
-        let show = await fetch(`https://api.tvmaze.com/shows/` + id)
-        let showJson = await show.json();
-        SetDataSingle(showJson);
-    };
+        GetShowData()
+    }, [id])
+
+    console.log(SingleShowData)
 
     return <div className="singleshow">
-        <h2>{DataSingle.name}</h2>
-        <h3>{DataSingle.premiered}</h3>
-        <img src={DataSingle.image !== undefined ? DataSingle.image.medium : '/image.png'}
-            alt={"Cover image for " + DataSingle.name} ></img>
+        <h2>{SingleShowData.name}</h2>
+        <h3>{SingleShowData.premiered}</h3>
+        <img src={SingleShowData.image !== undefined ? SingleShowData.image.medium : '/image.png'}
+            alt={"Cover image for " + SingleShowData.name} ></img>
     </div>
 }
 
