@@ -3,6 +3,21 @@
   padding: 0;
 }
 
+/* header */
+
+.header {
+  background: black;
+  width: calc(100% + 4em);
+  margin-left: -2em;
+  margin-top: -2em;
+  padding: 1em;
+}
+
+.header h2 {
+  margin-bottom: 0;
+}
+
+
 #mainDiv {
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,10 +28,6 @@
   background-attachment: fixed;
   color: white;
   padding: 2em;
-}
-
-#mainDiv p {
-  max-width: 60vw;
 }
 
 h1,
@@ -45,8 +56,91 @@ h2 {
   color: white;
 }
 
+/* Single show page */
+.singleshow {
+  display: flex;
+  flex-direction: row;
+}
+
+.singleshow>div:first-of-type {
+  padding-right: 2em;
+}
+
+.singleshow>div:nth-of-type(2) h2 {
+  font-size: 2em;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+}
+
+.singleshow>div:nth-of-type(2) img {
+  max-height: 50vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.back-button {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  max-width: 100px;
+  background-color: #3D948B;
+  border: none;
+  box-sizing: border-box;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.75rem;
+  padding: .35rem 1.65rem;
+  text-align: center;
+  cursor: pointer;
+  transform: rotate(-2deg);
+}
+
+.back-button:focus {
+  outline: 0;
+}
+
+.back-button:after {
+  content: '';
+  position: absolute;
+  border: 0.063em solid #fff;
+  bottom: 0.250em;
+  left: 0.250em;
+  width: calc(100% - 0.063em);
+  height: calc(100% - 0.063em);
+}
+
+.back-button:hover:after {
+  bottom: 0.125em;
+  left: 0.125em;
+}
+
 @media (max-width: 768px) {
   #mainDiv {
     padding: 1em;
+  }
+
+  /* header */
+  .header {
+    background: black;
+    width: 100%;
+    margin-left: -1em;
+    margin-top: -1em;
+  }
+
+  /* Single show page */
+  .singleshow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .singleshow>div:first-of-type {
+    padding-right: 0;
+  }
+
+  .back-button {
+    margin-bottom: 1em;
   }
 }

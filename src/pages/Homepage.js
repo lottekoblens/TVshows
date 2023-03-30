@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import Header from '../components/Header';
 import ComedyShows from '../modules/data/getComedyShows'
 import DramaShows from '../modules/data/getDramaShows';
 
@@ -9,7 +10,7 @@ const Homepage = () => {
         GetAllShowData()
     }, [])
 
-    console.log(Data)
+    // console.log(Data)
 
     const GetAllShowData = async () => {
         let shows = await fetch(`https://api.tvmaze.com/shows`)
@@ -18,6 +19,7 @@ const Homepage = () => {
     };
 
     return <div className="homepage">
+        <Header />
         <h1>TV Shows</h1>
         <div id="content">
             <ComedyShows data={Data} />

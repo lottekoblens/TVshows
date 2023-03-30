@@ -16,17 +16,22 @@ const SingleShow = () => {
         GetShowData()
     }, [id])
 
-    console.log(SingleShowData)
+    // console.log(SingleShowData)
 
-    return SingleShowData.image !== undefined ?
+    return SingleShowData.image ?
         <div className="singleshow">
-            <h2>{SingleShowData.name}</h2>
-            <img src={SingleShowData.image.medium}
-                alt={"Cover image for " + SingleShowData.name} ></img>
-            <p>{striptags(SingleShowData.summary)}</p>
-            <p>{SingleShowData.name} is spoken in {SingleShowData.language}</p>
+            <div>
+                <a className="back-button" href="/">Back</a>
+            </div>
+            <div>
+                <h2>{SingleShowData.name}</h2>
+                <img src={SingleShowData.image.original}
+                    alt={"Cover image for " + SingleShowData.name} ></img>
+                <p>{striptags(SingleShowData.summary)}</p>
+                <p>{SingleShowData.name} is spoken in {SingleShowData.language}</p>
+            </div>
         </div>
-        : <h2>Loading...</h2>
+        : <div><h2>Loading...</h2></div>
 }
 
 export default SingleShow;
