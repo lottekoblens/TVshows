@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { React, useEffect, useState } from 'react';
+import striptags from "striptags";
 const SingleShow = () => {
     const { id } = useParams()
 
@@ -22,7 +23,7 @@ const SingleShow = () => {
             <h2>{SingleShowData.name}</h2>
             <img src={SingleShowData.image.medium}
                 alt={"Cover image for " + SingleShowData.name} ></img>
-            <p>{SingleShowData.summary}</p>
+            <p>{striptags(SingleShowData.summary)}</p>
             <p>{SingleShowData.name} is spoken in {SingleShowData.language}</p>
         </div>
         : <h2>Loading...</h2>
