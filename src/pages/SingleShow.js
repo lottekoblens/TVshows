@@ -17,12 +17,14 @@ const SingleShow = () => {
 
     console.log(SingleShowData)
 
-    return <div className="singleshow">
-        <h2>{SingleShowData.name}</h2>
-        <h3>{SingleShowData.premiered}</h3>
-        <img src={SingleShowData.image !== undefined ? SingleShowData.image.medium : '/image.png'}
-            alt={"Cover image for " + SingleShowData.name} ></img>
-    </div>
+    return SingleShowData.image !== undefined ?
+        <div className="singleshow">
+            <h2>{SingleShowData.name}</h2>
+            <h3>{SingleShowData.premiered}</h3>
+            <img src={SingleShowData.image.medium}
+                alt={"Cover image for " + SingleShowData.name} ></img>
+        </div>
+        : <h2>Loading...</h2>
 }
 
 export default SingleShow;
