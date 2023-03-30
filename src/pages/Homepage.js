@@ -9,6 +9,8 @@ const Homepage = () => {
         GetAllShowData()
     }, [])
 
+    console.log(Data)
+
     const GetAllShowData = async () => {
         let shows = await fetch(`https://api.tvmaze.com/shows`)
         let showsJson = await shows.json();

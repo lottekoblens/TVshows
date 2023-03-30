@@ -20,9 +20,10 @@ const SingleShow = () => {
     return SingleShowData.image !== undefined ?
         <div className="singleshow">
             <h2>{SingleShowData.name}</h2>
-            <h3>{SingleShowData.premiered}</h3>
             <img src={SingleShowData.image.medium}
                 alt={"Cover image for " + SingleShowData.name} ></img>
+            <p>{SingleShowData.summary}</p>
+            <p>{SingleShowData.name} is spoken in {SingleShowData.language}</p>
         </div>
         : <h2>Loading...</h2>
 }

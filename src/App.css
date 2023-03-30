@@ -40,3 +40,9 @@ h2 {
   list-style-type: none;
   color: white;
 }
+
+@media (max-width: 768px) {
+  #mainDiv {
+    padding: 1em;
+  }
+}
