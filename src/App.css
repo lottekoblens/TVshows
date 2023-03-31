@@ -3,18 +3,40 @@
   padding: 0;
 }
 
+html {
+  min-height: 100%;
+}
+
 /* header */
 
 .header {
-  background: black;
-  width: calc(100% + 4em);
+  background: rgba(0, 0, 0, 0.5);
+  width: 98%;
   margin-left: -2em;
   margin-top: -2em;
-  padding: 1em;
+  padding: 1em 1em;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header img {
+  max-width: 2em;
+  max-height: 2em;
+  margin-right: 1em;
 }
 
 .header h2 {
   margin-bottom: 0;
+}
+
+.header a {
+  text-decoration: none;
+  display: flex;
+}
+
+.header a h2 {
+  color: white;
 }
 
 
@@ -22,7 +44,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -2;
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -33,6 +55,12 @@
 h1,
 h2 {
   margin-bottom: 1em;
+}
+
+/* homepage */
+
+.homepage {
+  padding-top: 3.2em;
 }
 
 .wrapper {
@@ -60,24 +88,40 @@ h2 {
 .singleshow {
   display: flex;
   flex-direction: row;
+  padding-top: 3em;
 }
 
 .singleshow>div:first-of-type {
   padding-right: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
 }
 
-.singleshow>div:nth-of-type(2) h2 {
-  font-size: 2em;
+.singleshow>div:first-of-type p {
+  margin-bottom: 1em;
+}
+
+.singleshow>div:nth-of-type(2) {
+  width: 40%;
+}
+
+.singleshow>div:nth-of-type(1) h2 {
+  font-size: 5em;
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
   font-style: normal;
   font-variant: normal;
   font-weight: 700;
+  margin-bottom: 0.5em;
+  line-height: 0.8em;
 }
 
 .singleshow>div:nth-of-type(2) img {
-  max-height: 50vh;
+  max-height: 80vh;
   object-fit: cover;
   object-position: center;
+  max-width: 100%;
 }
 
 .back-button {
@@ -124,8 +168,7 @@ h2 {
 
   /* header */
   .header {
-    background: black;
-    width: 100%;
+    width: 98%;
     margin-left: -1em;
     margin-top: -1em;
   }
@@ -134,13 +177,29 @@ h2 {
   .singleshow {
     display: flex;
     flex-direction: column;
+    padding-top: 4em;
+  }
+
+  .singleshow>div:nth-of-type(2) {
+    width: 100%;
   }
 
   .singleshow>div:first-of-type {
     padding-right: 0;
+    width: 100%;
   }
 
   .back-button {
     margin-bottom: 1em;
+  }
+
+  .singleshow>div:nth-of-type(1) h2 {
+    font-size: 3em;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 0.8em;
   }
 }

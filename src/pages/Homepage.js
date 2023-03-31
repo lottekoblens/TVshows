@@ -18,12 +18,13 @@ const Homepage = () => {
         SetData(showsJson);
     };
 
-    return <div className="homepage">
-        <Header />
-        <h1>TV Shows</h1>
-        <div id="content">
-            <ComedyShows data={Data} />
-            <DramaShows data={Data} />
+    return <div><Header />
+        <div className="homepage">
+            <h1>Find some nice TV Shows here</h1>
+            <div id="content">
+                <ComedyShows data={Data} />
+                <DramaShows data={Data} />
+            </div>
         </div>
     </div>
 }
