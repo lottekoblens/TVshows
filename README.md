@@ -13,6 +13,7 @@ This project was created by Lotte Koblens.
 
 ### React
 Why did I chose to work with React?
+I have little experience with React. 
 
 Why did I chose to work with Functional components?
 There are multiple reasons why I chose for the use of Functional components. 
