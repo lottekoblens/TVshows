@@ -26,5 +26,4 @@ Before this assignment I had a little experience with React and wanted to know m
 
 There are multiple reasons why I chose for the use of Functional components. 
 1. When I first worked with React for a project of school, they learned us using Functional components. So I'm used to that way of writing the code in React.
-2. Functional components are easier to read and test, because they are plain JavaScript functions.
-3. When you use Functional components you end up with less code then when you use Class components.
+2. In my opinion, Functional components are easier to read, because it looks more like plain JavaScript functions.
