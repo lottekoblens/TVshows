@@ -24,6 +24,6 @@ Before this assignment I had a little experience with React and wanted to know m
 
 **Why did I chose to work with Functional components?**
 
-There are multiple reasons why I chose for the use of Functional components. 
+There are some reasons why I chose for the use of Functional components. 
 1. When I first worked with React for a project of school, they learned us using Functional components. So I'm used to that way of writing the code in React.
 2. In my opinion, Functional components are easier to read, because it looks more like plain JavaScript functions.
