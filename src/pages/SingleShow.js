@@ -48,7 +48,7 @@ const SingleShow = () => {
                     <p><strong>Status: </strong>{SingleShowData.status}</p>
                 </div>
                 <div>
-                    <img src={SingleShowData.show.image ? SingleShowData.show.image.original : "/no-image.jpg"}
+                    <img src={SingleShowData.image ? SingleShowData.image.original : "/no-image.jpg"}
                         alt={"Cover image for " + SingleShowData.name} ></img>
                 </div>
             </div>

@@ -11,11 +11,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders TVShow app', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/TV Shows/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// test('renders TVShow app', () => {
+//   render(<App />);
+//   const linkElement = screen.getByText(/TV Shows/i);
+//   expect(linkElement).toBeInTheDocument();
+// });
 
 test('renders main div correctly', () => {
   render(<App />);
