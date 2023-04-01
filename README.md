@@ -12,11 +12,11 @@ This project was created by Lotte Koblens.
 ## Architectural decisions
 
 ### React
-Why did I chose to work with React?
+**Why did I chose to work with React?** 
 
 I have little experience with React. 
 
-Why did I chose to work with Functional components?
+**Why did I chose to work with Functional components?**
 
 There are multiple reasons why I chose for the use of Functional components. 
 1. When I first worked with React for a project of school, they learned us using Functional components. So I'm used to that way of writing the code in React.
