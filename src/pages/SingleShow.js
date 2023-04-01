@@ -18,11 +18,9 @@ const SingleShow = () => {
                 throw response;
             })
             .then(data => {
-                console.log(data)
                 SetSingleShowData(data);
             })
             .catch(error => {
-                console.error("Error fetching data: ", error)
                 SetError(error)
             })
             .finally(() => {
