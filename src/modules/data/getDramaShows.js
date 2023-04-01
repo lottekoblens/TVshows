@@ -16,7 +16,7 @@ const DramaShows = (props) => {
     let topDramas = sortedDramas.slice(0, 25);
 
     return (<div>
-        <h2>The best drama shows</h2>
+        <h3>The best drama shows</h3>
         <ul className="wrapper">
             {topDramas.map((item) => (
                 <a className="list-item" key={item.id} href={"/shows/" + item.id}> <li key={item.id}><img src={item.image.medium}></img><h3>{item.name}</h3></li></a>

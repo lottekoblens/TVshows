@@ -8,9 +8,6 @@ const Header = () => {
             <h2>TV Shows</h2>
         </a>
         <Search />
-        {/* <a href="/search" className="back-button"> */}
-        {/* <img src="/search.png" alt="Search icon" className="search"></img> */}
-        {/* </a> */}
     </div>
 }
 

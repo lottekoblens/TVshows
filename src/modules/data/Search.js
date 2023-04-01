@@ -58,7 +58,7 @@ const Search = () => {
                     value={Name}
                     className="input"
                 />
-                <button type="submit">Search</button>
+                <button type="submit" className="search-button">Search</button>
             </form>
         </div>
     )

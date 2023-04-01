@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Header from "../components/Header";
 
 const SearchResults = () => {
     const redirect = useLocation();
@@ -8,13 +9,15 @@ const SearchResults = () => {
     if (data.length === 0) return "No shows found!";
 
     return (
-        <div>
-            <h2>The best comedy shows</h2>
-            <ul className="wrapper">
-                {data.map((item) => (
-                    <a className="list-item" key={item.show.id} href={"/shows/" + item.show.id}> <li key={item.show.id}><img src={item.show.image ? item.show.image.medium : "Loading.png"} alt={item.show.name}></img><h3>{item.show.name}</h3></li></a>
-                ))}
-            </ul>
+        <div><Header />
+            <div className="results">
+                <h2>Results</h2>
+                <ul className="results-list">
+                    {data.map((item) => (
+                        <a className="list-item" key={item.show.id} href={"/shows/" + item.show.id}> <li key={item.show.id}><img width="210px" height="295px" src={item.show.image ? item.show.image.medium : "/no-image.jpg"} alt={item.show.name}></img><h3>{item.show.name}</h3></li></a>
+                    ))}
+                </ul>
+            </div>
         </div >
     )
 }

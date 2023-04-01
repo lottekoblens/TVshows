@@ -18,6 +18,7 @@ html {
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header img.logo {
@@ -45,30 +46,37 @@ html {
   color: white;
 }
 
-.back-button {
+.header form {
+  display: flex;
+}
+
+.header form input {
+  margin-right: 0.5em;
+}
+
+.search-button {
   position: relative;
   display: flex;
   text-decoration: none;
   width: 100%;
-  max-width: 73px;
   background-color: #3D948B;
   border: none;
   box-sizing: border-box;
   color: #000000;
   font-weight: 700;
-  line-height: 1.75rem;
   padding: .35rem 1.65rem;
   text-align: center;
   cursor: pointer;
   transform: rotate(-2deg);
   margin-right: 2em;
+  color: white;
 }
 
-.back-button:focus {
+.search-button:focus {
   outline: 0;
 }
 
-.back-button:after {
+.search-button:after {
   content: '';
   position: absolute;
   border: 0.063em solid #fff;
@@ -78,7 +86,7 @@ html {
   height: calc(100% - 0.063em);
 }
 
-.back-button:hover:after {
+.search-button:hover:after {
   bottom: 0.125em;
   left: 0.125em;
 }
@@ -99,6 +107,11 @@ html {
 
 h1,
 h2 {
+  margin-bottom: 1em;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+h3 {
   margin-bottom: 1em;
 }
 
@@ -171,8 +184,30 @@ h2 {
 
 /* search page */
 
-.search-page {
+.results {
   padding-top: 3em;
+}
+
+.results-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.results-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.results-list .list-item {
+  width: auto;
+  height: auto;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  text-decoration: none;
+}
+
+.results-list .list-item li {
+  list-style-type: none;
+  color: white;
 }
 
 @media (max-width: 768px) {
