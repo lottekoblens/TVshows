@@ -14,7 +14,7 @@ This project was created by Lotte Koblens.
 ### React
 **Why did I chose to work with React?** 
 
-I have little experience with React. 
+I have little experience with React, because I created a school project with React. I wanted to further learn how React works and I wanted to challenge myself. That's why I chose for React. 
 
 **Why did I chose to work with Functional components?**
 
