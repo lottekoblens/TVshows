@@ -40,9 +40,6 @@ const SingleShow = () => {
     return SingleShowData.image ?
         <div><Header />
             <div className="singleshow">
-                {/* <div>
-                <a className="back-button" href="/">Back</a>
-            </div> */}
                 <div>
                     <h2>{SingleShowData.name}</h2>
                     <p>{striptags(SingleShowData.summary)}</p>
