@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <Router>
-      <div id="mainDiv" style={{ backgroundImage: "url('/image.png')" }}>
+      <div id="mainDiv" >
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/shows/:id" element={<SingleShow />} />

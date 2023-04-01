@@ -37,21 +37,23 @@ const SingleShow = () => {
     if (Loading) return "Loading..."
     if (Error) return "Error!"
 
-    return SingleShowData.image ?
+    return (
         <div><Header />
             <div className="singleshow">
                 <div>
                     <h2>{SingleShowData.name}</h2>
                     <p>{striptags(SingleShowData.summary)}</p>
                     <p><strong>Language:</strong> {SingleShowData.language}</p>
+                    <p><strong>Rating: </strong>{SingleShowData.rating.average}</p>
+                    <p><strong>Status: </strong>{SingleShowData.status}</p>
                 </div>
                 <div>
-                    <img src={SingleShowData.image.original}
+                    <img src={SingleShowData.show.image ? SingleShowData.show.image.original : "/no-image.jpg"}
                         alt={"Cover image for " + SingleShowData.name} ></img>
                 </div>
             </div>
         </div>
-        : <div><h2>Loading...</h2></div>
+    )
 }
 
 export default SingleShow;

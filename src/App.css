@@ -7,6 +7,14 @@ html {
   min-height: 100%;
 }
 
+img {
+  border-radius: 1em;
+}
+
+strong {
+  color: #3D948B
+}
+
 /* header */
 
 .header {
@@ -19,6 +27,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 
 .header img.logo {
@@ -33,9 +42,7 @@ html {
   margin-right: 1em;
 }
 
-.header h2 {
-  margin-bottom: 0;
-}
+.header h2 {}
 
 .header a {
   text-decoration: none;
@@ -44,6 +51,8 @@ html {
 
 .header a h2 {
   color: white;
+  margin-bottom: 0;
+  line-height: 1.5em;
 }
 
 .header form {
@@ -52,6 +61,7 @@ html {
 
 .header form input {
   margin-right: 0.5em;
+  padding: 0.25em;
 }
 
 .search-button {
@@ -94,21 +104,20 @@ html {
 /* all pages */
 
 #mainDiv {
-  background-size: cover;
-  background-repeat: no-repeat;
   z-index: -2;
   min-height: 100vh;
   margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: linear-gradient(160deg, rgb(21, 21, 21), rgb(21, 21, 21) 60%, rgb(44, 106, 100) 60%, rgb(44, 106, 100));
   color: white;
   padding: 2em;
+
 }
 
 h1,
 h2 {
   margin-bottom: 1em;
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  color: #3D948B;
 }
 
 h3 {
@@ -140,6 +149,11 @@ h3 {
 .wrapper .list-item li {
   list-style-type: none;
   color: white;
+}
+
+.wrapper img:hover {
+  transform: scale(0.95);
+  transition: transform 0.4s;
 }
 
 /* Single show page */
@@ -180,6 +194,7 @@ h3 {
   object-fit: cover;
   object-position: center;
   max-width: 100%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 /* search page */
@@ -210,6 +225,11 @@ h3 {
   color: white;
 }
 
+.results-list .list-item li img:hover {
+  transform: scale(0.95);
+  transition: transform 0.4s;
+}
+
 @media (max-width: 768px) {
   #mainDiv {
     padding: 1em;
@@ -220,6 +240,21 @@ h3 {
     width: 92.5%;
     margin-left: -1em;
     margin-top: -1em;
+    padding: 1em;
+  }
+
+  .header h2 {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .search-button {
+    padding: .35rem .95rem;
+    margin-right: 0.7em;
+  }
+
+  .header form input {
+    max-width: 25vw;
   }
 
   /* Single show page */

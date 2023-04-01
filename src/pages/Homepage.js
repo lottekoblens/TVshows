@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import Header from '../components/Header';
-import ComedyShows from '../modules/data/getComedyShows'
-import DramaShows from '../modules/data/getDramaShows';
+import CategorisedShows from '../modules/data/ShowsForCategory'
 
 const Homepage = () => {
     const [Data, SetData] = useState(null)
@@ -21,7 +20,6 @@ const Homepage = () => {
                 throw response;
             })
             .then(data => {
-                console.log(data)
                 SetData(data);
             })
             .catch(error => {
@@ -38,10 +36,11 @@ const Homepage = () => {
 
     return <div><Header />
         <div className="homepage">
-            <h1>Find some nice TV Shows here</h1>
+            <h1>Our top rated tv shows</h1>
             <div id="content">
-                <ComedyShows data={Data} />
-                <DramaShows data={Data} />
+                <CategorisedShows data={Data} Category="Comedy" />
+                <CategorisedShows data={Data} Category="Drama" />
+                <CategorisedShows data={Data} Category="Action" />
             </div>
         </div>
     </div>
