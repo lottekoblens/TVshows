@@ -5,19 +5,37 @@ import striptags from "striptags";
 const SingleShow = () => {
     const { id } = useParams()
 
-    const [SingleShowData, SetSingleShowData] = useState([])
+    const [SingleShowData, SetSingleShowData] = useState(null)
+    const [Error, SetError] = useState(null)
+    const [Loading, SetLoading] = useState(true)
+
+    const GetShowData = async () => {
+        fetch('https://api.tvmaze.com/shows/' + id)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw response;
+            })
+            .then(data => {
+                console.log(data)
+                SetSingleShowData(data);
+            })
+            .catch(error => {
+                console.error("Error fetching data: ", error)
+                SetError(error)
+            })
+            .finally(() => {
+                SetLoading(false);
+            })
+    };
 
     useEffect(() => {
-        const GetShowData = async () => {
-            let show = await fetch(`https://api.tvmaze.com/shows/` + id)
-            let showJson = await show.json();
-            SetSingleShowData(showJson);
-        };
-
         GetShowData()
     }, [id])
 
-    // console.log(SingleShowData)
+    if (Loading) return "Loading..."
+    if (Error) return "Error!"
 
     return SingleShowData.image ?
         <div><Header />

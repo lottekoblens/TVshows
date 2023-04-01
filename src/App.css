@@ -11,18 +11,24 @@ html {
 
 .header {
   background: rgba(0, 0, 0, 0.5);
-  width: 98%;
+  width: 96.5%;
   margin-left: -2em;
   margin-top: -2em;
-  padding: 1em 1em;
+  padding: 1em 2em;
   position: fixed;
   display: flex;
   justify-content: space-between;
 }
 
-.header img {
+.header img.logo {
   max-width: 2em;
   max-height: 2em;
+  margin-right: 1em;
+}
+
+.header img.search {
+  max-width: 1.5em;
+  max-height: 1.5em;
   margin-right: 1em;
 }
 
@@ -39,6 +45,45 @@ html {
   color: white;
 }
 
+.back-button {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  max-width: 73px;
+  background-color: #3D948B;
+  border: none;
+  box-sizing: border-box;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.75rem;
+  padding: .35rem 1.65rem;
+  text-align: center;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  margin-right: 2em;
+}
+
+.back-button:focus {
+  outline: 0;
+}
+
+.back-button:after {
+  content: '';
+  position: absolute;
+  border: 0.063em solid #fff;
+  bottom: 0.250em;
+  left: 0.250em;
+  width: calc(100% - 0.063em);
+  height: calc(100% - 0.063em);
+}
+
+.back-button:hover:after {
+  bottom: 0.125em;
+  left: 0.125em;
+}
+
+/* all pages */
 
 #mainDiv {
   background-size: cover;
@@ -60,7 +105,7 @@ h2 {
 /* homepage */
 
 .homepage {
-  padding-top: 3.2em;
+  padding-top: 3.5em;
 }
 
 .wrapper {
@@ -124,41 +169,10 @@ h2 {
   max-width: 100%;
 }
 
-.back-button {
-  position: relative;
-  display: flex;
-  text-decoration: none;
-  width: 100%;
-  max-width: 100px;
-  background-color: #3D948B;
-  border: none;
-  box-sizing: border-box;
-  color: #000000;
-  font-weight: 700;
-  line-height: 1.75rem;
-  padding: .35rem 1.65rem;
-  text-align: center;
-  cursor: pointer;
-  transform: rotate(-2deg);
-}
+/* search page */
 
-.back-button:focus {
-  outline: 0;
-}
-
-.back-button:after {
-  content: '';
-  position: absolute;
-  border: 0.063em solid #fff;
-  bottom: 0.250em;
-  left: 0.250em;
-  width: calc(100% - 0.063em);
-  height: calc(100% - 0.063em);
-}
-
-.back-button:hover:after {
-  bottom: 0.125em;
-  left: 0.125em;
+.search-page {
+  padding-top: 3em;
 }
 
 @media (max-width: 768px) {
@@ -168,7 +182,7 @@ h2 {
 
   /* header */
   .header {
-    width: 98%;
+    width: 92.5%;
     margin-left: -1em;
     margin-top: -1em;
   }
@@ -187,10 +201,6 @@ h2 {
   .singleshow>div:first-of-type {
     padding-right: 0;
     width: 100%;
-  }
-
-  .back-button {
-    margin-bottom: 1em;
   }
 
   .singleshow>div:nth-of-type(1) h2 {

@@ -4,7 +4,7 @@ import { React } from 'react'
 
 import Homepage from './pages/Homepage';
 import SingleShow from './pages/SingleShow';
-import SearchInput from './pages/Searchpage';
+import SearchResult from './pages/SearchResults'
 const App = () => {
 
 
@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/shows/:id" element={<SingleShow />} />
-          <Route path="/search" element={<SearchInput />} />
+          <Route path="/search" element={<SearchResult />} />
         </Routes>
       </div>
     </Router>

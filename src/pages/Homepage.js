@@ -4,19 +4,37 @@ import ComedyShows from '../modules/data/getComedyShows'
 import DramaShows from '../modules/data/getDramaShows';
 
 const Homepage = () => {
-    const [Data, SetData] = useState([])
+    const [Data, SetData] = useState(null)
+    const [Loading, SetLoading] = useState(true);
+    const [Error, SetError] = useState(null);
 
     useEffect(() => {
         GetAllShowData()
     }, [])
 
-    // console.log(Data)
-
     const GetAllShowData = async () => {
-        let shows = await fetch(`https://api.tvmaze.com/shows`)
-        let showsJson = await shows.json();
-        SetData(showsJson);
+        fetch('https://api.tvmaze.com/shows')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw response;
+            })
+            .then(data => {
+                console.log(data)
+                SetData(data);
+            })
+            .catch(error => {
+                console.error("Error fetching data: ", error)
+                SetError(error)
+            })
+            .finally(() => {
+                SetLoading(false);
+            })
     };
+
+    if (Loading) return "Loading...";
+    if (Error) return "Error!";
 
     return <div><Header />
         <div className="homepage">

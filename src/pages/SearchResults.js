@@ -1,10 +1,10 @@
 import React from "react";
 
-const ShowResults = () => {
+const SearchResults = (props) => {
 
     return <div className="results">
 
     </div>
 }
 
-export default ShowResults;
+export default SearchResults;
