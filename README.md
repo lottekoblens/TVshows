@@ -3,6 +3,12 @@
 This project was created by Lotte Koblens.
 
 ## How to run this project?
+
+### Prerequisites
+
+Before you can run this project, you have to make sure you have Node.js v19.8.1 installed on your computer. 
+If you have Node.js installed, you can follow the next steps.
+
 1. Clone this repository by running this command `git clone https://github.com/lottekoblens/TVshows.git`
 2. Navigate to the project folder by typing `cd TVshows` in the terminal.
 3. Run `npm install`.
@@ -14,7 +20,7 @@ This project was created by Lotte Koblens.
 ### React
 **Why did I chose to work with React?** 
 
-I have little experience with React, because I created a school project with React. I wanted to further learn how React works and I wanted to challenge myself. That's why I chose for React. 
+Before this assignment I had a little experience with React and wanted to know more about this library. I wanted to challenge myself and therefore I chose to work with the framework React.
 
 **Why did I chose to work with Functional components?**
 
