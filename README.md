@@ -35,3 +35,5 @@ There are some reasons why I chose for the use of Functional components.
 I chose Sass because it keeps the code base smaller and it's easier to make changes to code that's written with Sass then with normal CSS.
 
 ## Unit testing
+
+Before this assignment I never performed unit tests. I did try to implement the unit tests and eventually I got it to work. I think they could be performed  better, but for the first time writing unit tests I think it is a good start.
