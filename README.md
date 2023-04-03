@@ -33,3 +33,5 @@ There are some reasons why I chose for the use of Functional components.
 **Why did I chose Sass?**
 
 I chose Sass because it keeps the code base smaller and it's easier to make changes to code that's written with Sass then with normal CSS.
+
+## Unit testing
