@@ -21,7 +21,7 @@ describe('show', () => {
     it("renders homepage title", async () => {
         // eslint-disable-next-line testing-library/no-unnecessary-act
         await act(async () => render(<Homepage />));
-        const name = screen.getByText('Our top rated tv shows')
-        expect(name).toBeInTheDocument();
+        const title = screen.getByText('Our top rated tv shows')
+        expect(title).toBeInTheDocument();
     });
 })

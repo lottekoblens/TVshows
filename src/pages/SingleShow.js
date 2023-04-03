@@ -17,7 +17,6 @@ const SingleShow = () => {
                 const json = await response.json();
                 SetSingleShowData(json);
             } catch (error) {
-                console.log(error);
                 SetError(true);
             } finally {
                 SetLoading(false);
