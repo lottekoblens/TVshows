@@ -1,14 +1,15 @@
 /* eslint-disable testing-library/no-node-access */
 import { render, screen } from '@testing-library/react';
-import SingleShow from './SingleShow';
-import { singleShow } from '../stubs/tvmaze';
+import Homepage from './Homepage';
+import { allShows } from '../stubs/tvmaze';
 import { act } from 'react-dom/test-utils';
 
 jest.mock("../components/Header");
+jest.mock("../modules/data/ShowsForCategory");
 
 beforeEach(() => {
     jest.spyOn(global, 'fetch').mockResolvedValue({
-        json: jest.fn().mockResolvedValue(singleShow)
+        json: jest.fn().mockResolvedValue(allShows)
     })
 });
 
@@ -17,10 +18,10 @@ afterEach(() => {
 });
 
 describe('show', () => {
-    it("renders single show name", async () => {
+    it("renders homepage title", async () => {
         // eslint-disable-next-line testing-library/no-unnecessary-act
-        await act(async () => render(<SingleShow />));
-        const name = screen.getByText('Under the Dome')
+        await act(async () => render(<Homepage />));
+        const name = screen.getByText('Our top rated tv shows')
         expect(name).toBeInTheDocument();
     });
 })

@@ -20,7 +20,7 @@ const CategorisedShows = (props) => {
         <h3>Top 25 {category} shows</h3>
         <ul className="wrapper">
             {topShowsForCategory.map((item) => (
-                <a className="list-item" key={item.id} href={"/shows/" + item.id}> <li key={item.id}><img src={item.image.medium} alt={"Cover image for " + item.name}></img><h3>{item.name}</h3></li></a>
+                <a className="list-item" key={item.id} href={"/shows/" + item.id}> <li key={item.id}><img src={item.image.medium} alt={"Cover image for " + item.name}></img><h4>{item.name}</h4></li></a>
             ))}
         </ul>
     </div >)

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { React, useEffect, useState } from 'react';
 import Header from "../components/Header";
 import striptags from "striptags";
+
 const SingleShow = () => {
     const { id } = useParams()
 
@@ -9,31 +10,34 @@ const SingleShow = () => {
     const [Error, SetError] = useState(null)
     const [Loading, SetLoading] = useState(true)
 
-    const GetShowData = async () => {
-        fetch('https://api.tvmaze.com/shows/' + id)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw response;
-            })
-            .then(data => {
-                SetSingleShowData(data);
-            })
-            .catch(error => {
-                SetError(error)
-            })
-            .finally(() => {
-                SetLoading(false);
-            })
-    };
-
     useEffect(() => {
+        const GetShowData = async () => {
+            try {
+                const response = await fetch('https://api.tvmaze.com/shows/' + id);
+                const json = await response.json();
+                SetSingleShowData(json);
+            } catch (error) {
+                console.log(error);
+                SetError(true);
+            } finally {
+                SetLoading(false);
+            }
+        };
+
         GetShowData()
     }, [id])
 
-    if (Loading) return "Loading..."
-    if (Error) return "Error!"
+
+    if (Loading) return (
+        <div><Header />
+            <div className="singleshow"><p>Loading...</p></div>
+        </div>
+    )
+    if (Error) return (
+        <div><Header />
+            <div className="singleshow"><p>There has been an error. Check your connection and please try again!</p></div>
+        </div>
+    )
 
     return (
         <div><Header />

@@ -8,31 +8,31 @@ const Homepage = () => {
     const [Error, SetError] = useState(null);
 
     useEffect(() => {
+        const GetAllShowData = async () => {
+            try {
+                const response = await fetch('https://api.tvmaze.com/shows');
+                const json = await response.json();
+                SetData(json);
+            } catch (error) {
+                SetError(true)
+            } finally {
+                SetLoading(false);
+            }
+        };
+
         GetAllShowData()
     }, [])
 
-    const GetAllShowData = async () => {
-        fetch('https://api.tvmaze.com/shows')
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw response;
-            })
-            .then(data => {
-                SetData(data);
-            })
-            .catch(error => {
-                console.error("Error fetching data: ", error)
-                SetError(error)
-            })
-            .finally(() => {
-                SetLoading(false);
-            })
-    };
-
-    if (Loading) return "Loading...";
-    if (Error) return "Error!";
+    if (Loading) return (
+        <div><Header />
+            <div className="homepage"><p>Loading...</p></div>
+        </div>
+    )
+    if (Error) return (
+        <div><Header />
+            <div className="homepage"><p>There has been an error. Check your connection and please try again!</p></div>
+        </div>
+    )
 
     return <div><Header />
         <div className="homepage">

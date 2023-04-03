@@ -6,7 +6,11 @@ const SearchResults = () => {
     const redirect = useLocation();
     const data = redirect.state.foundData;
 
-    if (data.length === 0) return "No shows found!";
+    if (data.length === 0) return (
+        <div><Header />
+            <div className="results"><p>We didn't find any show matching your input. Please try searching for another one!</p></div>
+        </div>
+    )
 
     return (
         <div><Header />
