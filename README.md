@@ -36,4 +36,4 @@ I chose Sass because it keeps the code base smaller and it's easier to make chan
 
 ## Unit testing
 
-Before this assignment I never performed unit tests. I did try to implement the unit tests and eventually I got it to work. I think they could be performed  better, but for the first time writing unit tests I think it is a good start.
+Before this assignment I never performed unit tests. I did try to implement the unit tests and eventually I got it to work. I think they could be performed  better, but for the first time writing unit tests I think it is a good start. Unfortunately I was not able to write unit tests for all files.
