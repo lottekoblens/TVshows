@@ -26,25 +26,17 @@ const Search = () => {
 
     const fetchSearchedShow = async () => {
         let foundData
-        await fetch('https://api.tvmaze.com/search/shows?q=' + Name)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw response;
-            })
-            .then(data => {
-                foundData = data
-            })
-            .catch(error => {
-                console.error("Error fetching data: ", error)
-                SetError(error)
-            })
-            .finally(() => {
-                SetName("")
-            })
+        try {
+            const response = await fetch('https://api.tvmaze.com/search/shows?q=' + Name)
+            const json = await response.json();
+            foundData = json;
+        } catch (error) {
+            SetError(true);
+        } finally {
+            SetName("");
+        }
         navigate("/search", { state: { foundData } })
-    }
+    };
 
     if (Error) return (
         <div><p>An error occured.</p></div>
