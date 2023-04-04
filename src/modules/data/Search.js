@@ -21,7 +21,6 @@ const Search = () => {
     useEffect(() => {
         if (isSubmitted && Name.length > 0) {
             fetchSearchedShow()
-
         }
     })
 
@@ -47,7 +46,9 @@ const Search = () => {
         navigate("/search", { state: { foundData } })
     }
 
-    if (Error) return "Error!"
+    if (Error) return (
+        <div><p>An error occured.</p></div>
+    )
 
     return (
         <div>
